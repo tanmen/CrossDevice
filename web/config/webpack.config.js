@@ -14,8 +14,8 @@ const babelLoaderConfiguration = {
   test: /\.js$/,
   // Add every directory that needs to be compiled by Babel during the build
   include: [
-    path.resolve(__dirname, '../src'),
-    path.resolve(__dirname, 'node_modules/react-native-uncompiled')
+    path.resolve(__dirname, '../../src'),
+    path.resolve(__dirname, '../../node_modules/react-native-uncompiled')
   ],
   use: {
     loader: 'babel-loader',
@@ -44,11 +44,11 @@ const imageLoaderConfiguration = {
 module.exports = {
   // ...the rest of your config
   entry: {
-    app: path.join(__dirname, '../index.web.js'),
+    app: path.join(__dirname, '../../index.web.js'),
   },
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, '../build'),
     filename: '[name].js',
     publicPath: 'http://localhost:7000/',
   },
@@ -68,12 +68,11 @@ module.exports = {
   plugins: [
     new InterpolateHtmlPlugin({
       PUBLIC_URL:'http://localhost:7000',
-
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: path.resolve(__dirname, '../public/index.html'),
     }),
     // `process.env.NODE_ENV === 'production'` must be `true` for production
     // builds to eliminate development checks and reduce build size. You may
@@ -84,7 +83,7 @@ module.exports = {
   ],
 
   devServer: {
-    contentBase: path.resolve(__dirname, 'build'),
+    contentBase: path.resolve(__dirname, '../build'),
     hot: true,
     inline: true,
     overlay: true,
