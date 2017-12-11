@@ -50,7 +50,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].js',
-    publicPath: 'http://localhost:7000/',
+    publicPath: 'http://localhost:3000/',
   },
 
   node: {
@@ -67,7 +67,7 @@ module.exports = {
 
   plugins: [
     new InterpolateHtmlPlugin({
-      PUBLIC_URL:'http://localhost:7000',
+      PUBLIC_URL:'http://localhost:3000',
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -81,17 +81,6 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production')
     })
   ],
-
-  devServer: {
-    contentBase: path.resolve(__dirname, '../build'),
-    hot: true,
-    inline: true,
-    overlay: true,
-    port: 7000,
-    stats: {
-      cached: false,
-    },
-  },
 
   resolve: {
     alias: {
