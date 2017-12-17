@@ -1,14 +1,17 @@
 import React from 'react'
-import { AppRegistry, Image, StyleSheet, Text, View } from 'react-native'
+import icon from './bizreach.png';
+import { Image, StyleSheet, Text, View, Button } from 'react-native'
 
 // Components
-const Card = ({ children }) => <View style={styles.card}>{children}</View>
-const Title = ({ children }) => <Text style={styles.title}>{children}</Text>
-// const Photo = ({ uri }) => <Image source={{ uri }} style={styles.image} />
+const Card = ({ children }) => <View style={styles.card}>{children}</View>;
+const Title = ({ children }) => <Text style={styles.title}>{children}</Text>;
+const Photo = ({ uri }) => <Image source={{ uri }} style={styles.image} />;
 const App = () => (
   <Card>
     <Title>App Card</Title>
-    <Text>tanmen</Text>
+    <Photo uri={icon}  />
+    <Text>たんめん</Text>
+    <Button title="button sample" />
   </Card>
 );
 
@@ -22,10 +25,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   image: {
-    height: 40,
+    height: 20,
     marginVertical: 10,
-    width: 40
+    width: 151
   }
-})
+});
 
 export default App;
