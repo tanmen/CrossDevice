@@ -1,5 +1,4 @@
 import React from 'react'
-import icon from './bizreach.png';
 import { Image, StyleSheet, Text, View, Button } from 'react-native'
 
 // Components
@@ -9,7 +8,7 @@ const Photo = ({ uri }) => <Image source={{ uri }} style={styles.image} />;
 const App = () => (
   <Card>
     <Title>App Card</Title>
-    <Photo uri={icon}  />
+    <Photo uri="https://www.bizreach.jp/img/logo/logo-bizreach.png"  />
     <Text>たんめん</Text>
     <Button title="button sample" />
   </Card>
@@ -25,9 +24,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   image: {
-    height: 20,
     marginVertical: 10,
-    width: 151
+    width: 200,
+    height: 56,
   }
 });
 
